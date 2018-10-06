@@ -14,4 +14,4 @@ FROM nginx
 EXPOSE 80
 
 # Je copie le résultat du build de la premiere phase
-#COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder ./app/build /usr/share/nginx/html
