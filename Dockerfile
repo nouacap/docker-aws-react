@@ -1,5 +1,5 @@
 # Lancement de la premiere phase => phase de build
-FROM node:alpine as build-phase
+FROM node:alpine as builder
 
 WORKDIR /app
 
@@ -14,4 +14,4 @@ FROM nginx
 EXPOSE 80
 
 # Je copie le résultat du build de la premiere phase
-COPY --from=build-phase /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
