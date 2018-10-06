@@ -1,7 +1,7 @@
 # Lancement de la premiere phase => phase de build
 FROM node:alpine as build-phase
 
-WORKDIR '/app'
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
